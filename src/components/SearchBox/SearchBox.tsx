@@ -5,7 +5,7 @@ import './SearchBox.css';
 function SearchBox() {
   return (
     <div className='topnav'>
-        <input type="text" placeholder="Search by name or index . . ." />
+            <input className='submit' type="text" placeholder="Search by name or index..."></input>
     </div>
   );
 }

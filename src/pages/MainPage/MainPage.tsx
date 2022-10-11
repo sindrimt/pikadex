@@ -1,3 +1,5 @@
+import React from "react";
+import GridContainer from "../../components/GridContainer/GridContainer";
 import Navbar from "../../components/Navbar/Navbar";
 // import SearchBox from "../../components/SearchBox/SearchBox";
 
@@ -6,7 +8,7 @@ import Navbar from "../../components/Navbar/Navbar";
 function MainPage() {
     
     return (
-        <Navbar />
+        <><Navbar /><GridContainer /></>
     );
   }
   

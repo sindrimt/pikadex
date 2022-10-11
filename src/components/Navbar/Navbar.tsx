@@ -10,11 +10,10 @@ const Navbar = () => {
         <div className="Header">
             <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
                 <img id="pokeball" src="pokeball.png" alt="Pokeball" width="30" height="30"></img> 
-
                 <h1 id="logo">Pikadex</h1>
          <div className="searchbox"> 
                     <SearchBox />
-                    <RandomButton />
+                    {/* <RandomButton /> */}
         </div>
         </div>
     );
