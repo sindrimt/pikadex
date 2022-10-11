@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div className="Header">
             <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
-                <img id="pokeball" src="pokeball_dark.png" alt="Pokeball" width="30" height="30"></img> 
+                <img id="pokeball" src="pokeball.png" alt="Pokeball" width="30" height="30"></img> 
 
                 <h1 id="logo">Pikadex</h1>
          <div className="searchbox"> 
