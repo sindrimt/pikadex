@@ -1,7 +1,6 @@
 import React from "react";
 // import logo from './pokeball.png';
-import "./App.css";
-import MainPage from "./pages/MainPage/MainPage";
+import Homepage from "./pages/MainPage/Homepage";
 import { useQuery, gql } from "@apollo/client";
 //Apolo docs: https://www.apollographql.com/docs/react/get-started/
 
@@ -37,7 +36,7 @@ const GET_FAVORITES = gql`
 } */
 
 function App() {
-    return <MainPage />;
+    return <Homepage />;
 }
 
 export default App;

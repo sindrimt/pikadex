@@ -1,22 +1,62 @@
 import React from "react";
-import "./Navbar.css";
-import SearchBox from "../SearchBox/SearchBox"; 
-// import Logo from "../Logo/Logo";
+import SearchBox from "../SearchBox/SearchBox";
 import RandomButton from "../RandomButton/RandomButton";
 
+import {
+    LogoContainer,
+    NavbarOuter,
+    PokeBall,
+    Logo,
+    LogoTextbox,
+    DownArrow,
+    GridContainer,
+    SearchOuter,
+    PokeBallBtnContainer,
+    PokeBallBtn,
+    TagOuter,
+    Tag,
+} from "./NavbarStyles";
+import pokeball from "../../assets/Pokeball.svg";
+import logo from "../../assets/Logo.svg";
+import navArrowDown from "../../assets/icons/navbarArrowDown.svg";
+import pokeballIcon from "../../assets/icons/pokeball_icon.svg";
+import search from "../../assets/icons/search.svg";
 
 const Navbar = () => {
     return (
-        <div className="Header">
-            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
-                <img id="pokeball" src="pokeball.png" alt="Pokeball" width="30" height="30"></img> 
+        <NavbarOuter>
+            <LogoContainer>
+                <LogoTextbox>
+                    <Logo src={logo} />
+                    <div>Pikadex</div>
+                </LogoTextbox>
+                <DownArrow src={navArrowDown} />
+            </LogoContainer>
+            <PokeBall src={pokeball} />
 
-                <h1 id="logo">Pikadex</h1>
-         <div className="searchbox"> 
-                    <SearchBox />
-                    <RandomButton />
-        </div>
-        </div>
+            <GridContainer>
+                <SearchOuter>
+                    <input type="text" placeholder="Search by name or index" className="searchbar" />
+                    <PokeBallBtnContainer>
+                        <PokeBallBtn src={pokeballIcon} />
+                    </PokeBallBtnContainer>
+                </SearchOuter>
+                <TagOuter>
+                    <Tag>
+                        <div>x</div>
+                        <div>Tag</div>
+                    </Tag>
+                    <Tag>
+                        <div>x</div>
+                        <div>Tag</div>
+                    </Tag>
+                    <Tag>
+                        <div>x</div>
+                        <div>Tag</div>
+                    </Tag>
+                </TagOuter>
+            </GridContainer>
+        </NavbarOuter>
     );
 };
 
