@@ -1,6 +1,7 @@
-import React from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import RandomButton from "../RandomButton/RandomButton";
+
+import React, { useState, useEffect } from "react";
 
 import {
     LogoContainer,
@@ -17,6 +18,15 @@ import {
     Tag,
     FilterOuter,
     NavbarEdge,
+    DropdownOuter,
+    DropdownHeader,
+    TypesBox,
+    SortByBox,
+    SortTag,
+    DropdownGridRow,
+    ButtonsContainer,
+    ResetBtn,
+    SearchBtn,
 } from "./NavbarStyles";
 import pokeball from "../../assets/Pokeball.svg";
 import logo from "../../assets/Logo.svg";
@@ -48,9 +58,25 @@ const list = [
 ];
 
 const Navbar = () => {
+    const [showDropdown, setShowDropdown] = useState<any>(false);
+    const [height, setHeight] = useState<number | string>("172px");
+
+    useEffect(() => {
+        console.log(showDropdown);
+        decideHeight();
+    }, [showDropdown]);
+
+    const decideHeight = () => {
+        showDropdown ? setHeight("fit-content") : setHeight("172px");
+    };
+
+    /*     const decideNavbarEdgeGap = () => {
+        showDropdown ? setEdgeMargin("0px") : setEdgeMargin("10px");
+    }; */
+
     return (
         <>
-            <NavbarOuter>
+            <NavbarOuter style={{ height }}>
                 <LogoContainer>
                     <LogoTextbox>
                         <Logo src={logo} />
@@ -78,8 +104,41 @@ const Navbar = () => {
                         ))}
                     </TagOuter>
                 </GridContainer>
+                {showDropdown && (
+                    <>
+                        <DropdownOuter>
+                            <DropdownGridRow>
+                                <DropdownHeader>Types</DropdownHeader>
+                                <TypesBox>
+                                    <TagOuter>
+                                        {/* Map over the list of tags with colors and text */}
+                                        {list.map((item: Array<string>) => (
+                                            <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
+                                        ))}
+                                    </TagOuter>
+                                </TypesBox>
+                            </DropdownGridRow>
+                            <DropdownGridRow>
+                                <DropdownHeader>Sort By</DropdownHeader>
+                                <SortByBox>
+                                    <SortTag>A - Z</SortTag>
+                                    <SortTag>Z - A</SortTag>
+                                    <SortTag>Lowest No.</SortTag>
+                                    <SortTag>Highest No.</SortTag>
+                                    <SortTag style={{}}>Favorites</SortTag>
+                                </SortByBox>
+                            </DropdownGridRow>
+                            <DropdownGridRow>
+                                <ButtonsContainer>
+                                    <ResetBtn>Reset</ResetBtn>
+                                    <SearchBtn>Search</SearchBtn>
+                                </ButtonsContainer>
+                            </DropdownGridRow>
+                        </DropdownOuter>
+                    </>
+                )}
                 <FilterOuter>
-                    <NavbarEdge src={navbarEdge} />
+                    <NavbarEdge src={navbarEdge} onClick={() => setShowDropdown(!showDropdown)} />
                 </FilterOuter>
             </NavbarOuter>
         </>
