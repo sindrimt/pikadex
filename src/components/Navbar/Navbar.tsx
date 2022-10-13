@@ -24,6 +24,9 @@ import {
     SortByBox,
     SortTag,
     DropdownGridRow,
+    ButtonsContainer,
+    ResetBtn,
+    SearchBtn,
 } from "./NavbarStyles";
 import pokeball from "../../assets/Pokeball.svg";
 import logo from "../../assets/Logo.svg";
@@ -125,7 +128,12 @@ const Navbar = () => {
                                     <SortTag>Favorites</SortTag>
                                 </SortByBox>
                             </DropdownGridRow>
-                            <DropdownGridRow></DropdownGridRow>
+                            <DropdownGridRow>
+                                <ButtonsContainer>
+                                    <ResetBtn>Reset</ResetBtn>
+                                    <SearchBtn>Search</SearchBtn>
+                                </ButtonsContainer>
+                            </DropdownGridRow>
                         </DropdownOuter>
                     </>
                 )}

@@ -213,3 +213,24 @@ export const SortTag = styled.div`
     border-radius: 10px;
     width: fit-content;
 `;
+
+export const ButtonsContainer = styled.div`
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    gap: 10px;
+`;
+
+export const ResetBtn = styled.div`
+    background-color: rgba(15, 10, 10, 0.5);
+    color: #ffffff;
+    padding: 5px 20px 5px 20px;
+    border-radius: 7px;
+`;
+
+export const SearchBtn = styled.div`
+    background-color: rgba(15, 10, 10, 0.5);
+    color: #ffffff;
+    padding: 5px 50px 5px 50px;
+    border-radius: 7px;
+`;
