@@ -58,8 +58,8 @@ const list = [
 ];
 
 const Navbar = () => {
-    const [showDropdown, setShowDropdown] = useState<any>(false);
-    const [height, setHeight] = useState<number | string>("172px");
+    const [showDropdown, setShowDropdown] = useState<boolean>(false);
+    const [height, setHeight] = useState<string>("172px");
 
     useEffect(() => {
         console.log(showDropdown);
