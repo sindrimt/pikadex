@@ -103,7 +103,7 @@ export const PokeBallBtnContainer = styled.div`
 
 export const PokeBallBtn = styled.img`
     @media (max-width: 600px) {
-        width: 45px;
+        width: 40px;
     }
 `;
 
