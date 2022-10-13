@@ -5,7 +5,7 @@ import styled from "styled-components";
 //The wrapper for our Navbar
 export const NavbarOuter = styled.div`
     @media (max-width: 600px) {
-        position: absolute;
+        position: fixed;
         height: 172px;
         width: 100%;
         background-color: #bd1808;
@@ -103,7 +103,7 @@ export const PokeBallBtnContainer = styled.div`
 
 export const PokeBallBtn = styled.img`
     @media (max-width: 600px) {
-        width: 45px;
+        width: 40px;
     }
 `;
 
