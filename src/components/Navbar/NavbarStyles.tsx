@@ -3,10 +3,10 @@ import styled from "styled-components";
 // Media queries https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 
 //The wrapper for our Navbar
-export const NavbarOuter = styled.div`
+export const NavbarOuter: any = styled.div`
     @media (max-width: 600px) {
         position: absolute;
-        height: 172px;
+        height: fit-content;
         width: 100%;
         background-color: #bd1808;
     }
@@ -139,8 +139,9 @@ export const FilterOuter = styled.div`
     width: 100%;
 `;
 
-export const NavbarEdge = styled.img`
+export const NavbarEdge: any = styled.img`
     margin-top: 10px;
+    z-index: 999;
 
     &:hover {
         cursor: pointer;
@@ -153,19 +154,42 @@ export const FilterIcon = styled.div``;
 //"Filter your pokemon"
 export const FilterText = styled.div``;
 
-//The dropdown appears when "Filter your pokemon" is clicked
-export const DropdownOuter = styled.div``;
+//The dropdown appears when "Filter your pokemon" is clicked. The grid creates equally sized rows.
+export const DropdownOuter = styled.div`
+    position: relative;
+    background-color: #bd1808;
+    width: 100%;
+    height: 500px;
+    z-index: 999;
+    margin-top: 15px;
+    padding-top: 15px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-rows: 3fr 3fr 1fr;
+    grid-row-gap: 50px;
+`;
+
+//Wrapper for each row-section in the dropdown grid
+export const DropdownGridRow = styled.div`
+    width: 100%;
+`;
 
 //Header for "Types" and "Sort by"
 export const DropdownHeader = styled.div`
     color: #ffffff;
+    font-size: 1.2rem;
 `;
 
 //Box and grid for the types-section
 export const TypesBox = styled.div`
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    height: 100%;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
 `;
 
 //Box and grid for the sort-by-section
@@ -173,6 +197,9 @@ export const SortByBox = styled.div`
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
     grid-template-columns: auto(minmax(100px, 1fr));
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
 `;
 
 //"Sort by"-tags such as "A - Z"
@@ -184,4 +211,5 @@ export const SortTag = styled.div`
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
+    width: fit-content;
 `;
