@@ -181,11 +181,11 @@ export const DropdownHeader = styled.div`
     font-size: 1.2rem;
 `;
 
-//Box and grid for the types-section
+//Box and grid for the types-section. Parent of the TagOuter containing the carousel.
 export const TypesBox = styled.div`
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
-    grid-template-columns: 1fr;
+    align-items: center;
     height: 100%;
     border-radius: 10px;
     width: 95%;
@@ -194,11 +194,13 @@ export const TypesBox = styled.div`
 
 //Box and grid for the sort-by-section
 export const SortByBox = styled.div`
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     display: grid;
-    grid-template-columns: auto(minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(auto, auto));
     border-radius: 10px;
     width: 95%;
+    align-items: center;
     margin: auto;
 `;
 
@@ -206,31 +208,60 @@ export const SortByBox = styled.div`
 export const SortTag = styled.div`
     background-color: rgba(15, 10, 10, 0.5);
     color: #ffffff;
-    padding: 2px 10px 2px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     border-radius: 10px;
-    width: fit-content;
+    font-size: 1.2rem;
+    width: 80%;
+    height: 40px;
+    display: grid;
+    align-items: center;
+    margin: auto;
+
+    //Last tag takes up width of two columns
+    &:nth-child(5) {
+        border-spacing: 10px;
+        grid-column: span 2;
+        width: 90%;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 0.9rem;
+        padding: 0 5px 0 5px;
+    }
 `;
 
 export const ButtonsContainer = styled.div`
-    width: fit-content;
+    width: 100%;
     display: flex;
-    margin: auto;
+    justify-content: center;
     gap: 10px;
 `;
 
 export const ResetBtn = styled.div`
     background-color: rgba(15, 10, 10, 0.5);
     color: #ffffff;
-    padding: 5px 20px 5px 20px;
-    border-radius: 7px;
+    padding: 5px 0 5px 0;
+    width: 35%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    display: grid;
+    align-items: center;
+
+    @media screen and (max-width: 320px) {
+        font-size: 1rem;
+    }
 `;
 
 export const SearchBtn = styled.div`
     background-color: rgba(15, 10, 10, 0.5);
     color: #ffffff;
-    padding: 5px 50px 5px 50px;
-    border-radius: 7px;
+    padding: 5px 0 5px 0;
+    width: 55%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    display: grid;
+    align-items: center;
+
+    @media screen and (max-width: 320px) {
+        font-size: 1rem;
+    }
 `;

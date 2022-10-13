@@ -125,7 +125,7 @@ const Navbar = () => {
                                     <SortTag>Z - A</SortTag>
                                     <SortTag>Lowest No.</SortTag>
                                     <SortTag>Highest No.</SortTag>
-                                    <SortTag>Favorites</SortTag>
+                                    <SortTag style={{}}>Favorites</SortTag>
                                 </SortByBox>
                             </DropdownGridRow>
                             <DropdownGridRow>
