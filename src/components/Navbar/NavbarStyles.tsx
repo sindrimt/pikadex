@@ -3,7 +3,7 @@ import styled from "styled-components";
 // Media queries https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 
 //The wrapper for our Navbar
-export const NavbarOuter: any = styled.div`
+export const NavbarOuter = styled.div`
     @media (max-width: 600px) {
         position: absolute;
         height: fit-content;
@@ -139,7 +139,7 @@ export const FilterOuter = styled.div`
     width: 100%;
 `;
 
-export const NavbarEdge: any = styled.img`
+export const NavbarEdge = styled.img`
     margin-top: 10px;
     z-index: 999;
 
