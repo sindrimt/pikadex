@@ -1,4 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
+import Card from "../../components/Card/Card";
+
 // import SearchBox from "../../components/SearchBox/SearchBox";
 import leftEdge from "../../assets/pageEdges/leftEdge.svg";
 import rightEdge from "../../assets/pageEdges/rightEdge.svg";
@@ -13,80 +15,29 @@ function MainPage() {
             <LeftEdge src={leftEdge} />
             <RightEdge src={rightEdge} />
             <FooterEdge src={footerEdge} />
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
-            <div>TEST</div>
+            <CardGrid>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </CardGrid>
         </>
     );
 }
+
+//Grid for the pokemon cards
+const CardGrid = styled.div`
+    position: absolute;
+    z-index: -1;
+    top: 172px;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    margin-top: 30px;
+    grid-row-gap: 15px;
+    justify-items: center;
+`;
 
 const LeftEdge = styled.img`
     position: fixed;
