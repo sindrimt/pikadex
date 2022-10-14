@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 // Media queries https://www.w3schools.com/css/css_rwd_mediaqueries.asp
 
+interface Epic {
+    height: any;
+    transition: any;
+}
+
 //The wrapper for our Navbar
-export const NavbarOuter = styled.div`
+export const NavbarOuter = styled.div<Epic>`
     @media (max-width: 600px) {
-        position: absolute;
-        height: fit-content;
+        // Sets only animation when scrolling down
+        transition: ${(props) => (props.transition ? "0.3s all" : "0s")};
+        height: ${(props) => props.height};
+        position: fixed;
         width: 100%;
         background-color: #bd1808;
     }
@@ -29,6 +36,8 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoTextbox = styled.div`
+    transition: 0.5s all;
+
     @media (max-width: 600px) {
         display: flex;
         justify-content: space-between;
@@ -44,6 +53,8 @@ export const Logo = styled.img`
 `;
 
 export const DownArrow = styled.img`
+    transition: 0.5s all;
+
     @media (max-width: 600px) {
         width: 25px;
         position: relative;
@@ -156,6 +167,8 @@ export const FilterText = styled.div``;
 
 //The dropdown appears when "Filter your pokemon" is clicked. The grid creates equally sized rows.
 export const DropdownOuter = styled.div`
+    transition: 0.5s all;
+
     position: relative;
     background-color: #bd1808;
     width: 100%;

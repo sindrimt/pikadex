@@ -14,12 +14,12 @@ function MainPage() {
             <Navbar />
             <LeftEdge src={leftEdge} />
             <RightEdge src={rightEdge} />
-            <FooterEdge src={footerEdge} />
             <CardGrid>
                 <Card />
                 <Card />
                 <Card />
                 <Card />
+                <FooterEdge src={footerEdge} />
             </CardGrid>
         </>
     );
@@ -87,7 +87,7 @@ const RightEdge = styled.img`
 `;
 
 const FooterEdge = styled.img`
-    position: fixed;
+    position: absolute;
     bottom: -1px;
     left: 50%;
     transform: translate(-50%, 0%);
