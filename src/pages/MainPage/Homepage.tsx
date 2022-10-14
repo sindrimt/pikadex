@@ -35,7 +35,7 @@ const CardGrid = styled.div`
     display: grid;
     grid-template-rows: repeat(1fr);
     margin-top: 30px;
-    grid-row-gap: 15px;
+    grid-row-gap: 40px;
     justify-items: center;
 `;
 
