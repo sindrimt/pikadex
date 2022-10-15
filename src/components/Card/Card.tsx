@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bulb from "../../assets/testREMOVE/bulb.png";
 
-import { CardContainer, InformationContainer, NameTag, PokeIndex, Tags } from "./CardStyles";
+import { CardContainer, InformationContainer, NameTag, PokeIndex, Tag, Tags } from "./CardStyles";
 
 const Card = () => {
     return (
@@ -15,7 +15,10 @@ const Card = () => {
                     </div>
                     <div>some epic stats</div>
                 </InformationContainer>
-                <Tags>Water Flame</Tags>
+                <Tags>
+                    <Tag>Water</Tag>
+                    <Tag>Flame</Tag>
+                </Tags>
                 <NameTag>Pikachu</NameTag>
             </CardContainer>
         </>

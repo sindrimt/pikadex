@@ -58,4 +58,23 @@ export const Tags = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    gap: 30px;
+    position: relative;
+    bottom: 7px;
+`;
+
+export const Tag = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 20px;
+    background-color: lightblue;
+    font-size: 14px;
+    border-radius: 15px;
+    gap: 20px;
+    padding: 3px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
 `;

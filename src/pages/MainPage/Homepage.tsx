@@ -7,13 +7,26 @@ import rightEdge from "../../assets/pageEdges/rightEdge.svg";
 import footerEdge from "../../assets/pageEdges/footerEdge.svg";
 
 import styled from "styled-components";
+import { useScroll } from "../../hooks/useScroll";
 
-function MainPage() {
+const MainPage = () => {
+    const scroll = useScroll();
+    let lineHeight: string = "70vh";
+    let lineTop: string = "200px";
+    let lineOffset: string = "0px";
+
+    // If the user has scrolled over 80 px, increase the line heights
+    if (scroll > 5) {
+        lineHeight = "80vh";
+        lineTop = "120px";
+        lineOffset = "7px";
+    }
+
     return (
         <>
             <Navbar />
-            <LeftEdge src={leftEdge} />
-            <RightEdge src={rightEdge} />
+            <LeftEdge src={leftEdge} height={lineHeight} top={lineTop} offset={lineOffset} />
+            <RightEdge src={rightEdge} height={lineHeight} top={lineTop} offset={lineOffset} />
             <CardGrid>
                 <Card />
                 <Card />
@@ -23,6 +36,18 @@ function MainPage() {
             </CardGrid>
         </>
     );
+};
+// interfaces for side lines
+interface LeftEdgeI {
+    height: string;
+    top: string;
+    offset: string;
+}
+
+interface RightEdgeI {
+    height: string;
+    top: string;
+    offset: string;
 }
 
 //Grid for the pokemon cards
@@ -35,15 +60,16 @@ const CardGrid = styled.div`
     display: grid;
     grid-template-rows: repeat(1fr);
     margin-top: 30px;
-    grid-row-gap: 40px;
+    grid-row-gap: 50px;
     justify-items: center;
 `;
 
-const LeftEdge = styled.img`
+const LeftEdge = styled.img<LeftEdgeI>`
+    transition: 0.2s all;
     position: fixed;
-    transform: translateX(-1px);
-    top: 200px;
-    height: 70vh;
+    left: ${(props) => "-" + props.offset};
+    top: ${(props) => props.top};
+    height: ${(props) => props.height};
 
     @media (max-height: 680px) {
         height: 64vh;
@@ -62,12 +88,13 @@ const LeftEdge = styled.img`
     }
 `;
 
-const RightEdge = styled.img`
+const RightEdge = styled.img<RightEdgeI>`
+    transition: 0.2s all;
     position: fixed;
-    right: 0px;
+    right: ${(props) => "-" + props.offset};
     transform: translateX(0px);
-    top: 200px;
-    height: 70%;
+    top: ${(props) => props.top};
+    height: ${(props) => props.height};
 
     @media (max-height: 680px) {
         height: 64vh;
