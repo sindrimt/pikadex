@@ -3,15 +3,15 @@ import bulb from "../../assets/testREMOVE/bulb.png";
 
 import { CardContainer, InformationContainer, NameTag, PokeIndex, Tag, Tags } from "./CardStyles";
 
-const Card = () => {
+const Card = ({ index, img, name }: any) => {
     return (
         <>
             <CardContainer>
-                <PokeIndex>#001</PokeIndex>
+                <PokeIndex>#00{index}</PokeIndex>
                 <InformationContainer>
                     {/* <PokeIndex>#001</PokeIndex> */}
                     <div>
-                        <img src={bulb} alt="bubla" />
+                        <img src={img} alt="bubla" />
                     </div>
                     <div>some epic stats</div>
                 </InformationContainer>
@@ -19,7 +19,7 @@ const Card = () => {
                     <Tag>Water</Tag>
                     <Tag>Flame</Tag>
                 </Tags>
-                <NameTag>Pikachu</NameTag>
+                <NameTag>{name}</NameTag>
             </CardContainer>
         </>
     );
