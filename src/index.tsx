@@ -7,26 +7,30 @@ import { ApolloClient, InMemoryCache, ApolloProvider, gql } from "@apollo/client
 //Apollo docs: https://www.apollographql.com/docs/react/get-started/
 
 //Connect apollo to our server uri
-const client = new ApolloClient({
+/* const client = new ApolloClient({
     uri: "http://it2810-40.idi.ntnu.no:7474/",
+    cache: new InMemoryCache(),
+}); */
+
+//Connect apollo to the pokeapi endpoint
+const client = new ApolloClient({
+    uri: "https://beta.pokeapi.co/graphql/v1beta",
     cache: new InMemoryCache(),
 });
 
-//Vi kan bruke noe lignende til å hente ut favorittene som er lagret i databasen vår.
-/* client
-  .query({
-    query: gql`
-      query GetFavorites {
-        pokemon {
-          id
-          name
-          description
-          photo
+/* const GET_POKEMON_LIST = gql`
+    {
+        pokemon_v2_pokemonsprites(limit: 10) {
+            pokemon_id
+            pokemon_v2_pokemon {
+                id
+                name
+            }
         }
-      }
-    `,
-  })
-  .then((result) => console.log(result)); */
+    }
+`;
+
+client.query({ query: GET_POKEMON_LIST }).then(console.log); */
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
