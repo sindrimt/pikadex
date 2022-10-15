@@ -36,6 +36,20 @@ const GET_FAVORITES = gql`
 } */
 
 function App() {
+    function displayFavorites() {
+        const { loading, error, data } = useQuery(GET_FAVORITES);
+        //Her kan vi mappe dataen i favorites og vise dem i kortene
+        //Dummy kode som vi kan bruke senere
+        if (loading) return <p>Loading...</p>;
+        if (error) return <p>Error :(</p>;
+
+        return data.pokemon_v2_pokemonsprites.map(({ pokemon_id }: any) => (
+            <div key={pokemon_id}>
+                <h3>test</h3>
+            </div>
+        ));
+    }
+
     return <Homepage />;
 }
 
