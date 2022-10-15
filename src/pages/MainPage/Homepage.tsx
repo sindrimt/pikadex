@@ -16,7 +16,7 @@ const MainPage = () => {
     let lineOffset: string = "0px";
 
     // If the user has scrolled over 80 px, increase the line heights
-    if (scroll > 40) {
+    if (scroll > 5) {
         lineHeight = "80vh";
         lineTop = "120px";
         lineOffset = "7px";
