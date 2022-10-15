@@ -5,13 +5,14 @@ import { useQuery, gql } from "@apollo/client";
 //Apolo docs: https://www.apollographql.com/docs/react/get-started/
 
 //This is just dummy code, and has not been implemented yet. Used to retrieve favorites from DB.
-const GET_FAVORITES = gql`
-    query GetFavorites {
-        pokemon {
-            id
-            name
-            description
-            photo
+const GET_POKEMON_LIST = gql`
+    {
+        pokemon_v2_pokemonsprites(limit: 10) {
+            pokemon_id
+            pokemon_v2_pokemon {
+                id
+                name
+            }
         }
     }
 `;
@@ -35,9 +36,9 @@ const GET_FAVORITES = gql`
     ));
 } */
 
-function App() {
-    function displayFavorites() {
-        const { loading, error, data } = useQuery(GET_FAVORITES);
+const App = () => {
+    /*     const displayFavorites = () => {
+        const { loading, error, data } = useQuery(GET_POKEMON_LIST);
         //Her kan vi mappe dataen i favorites og vise dem i kortene
         //Dummy kode som vi kan bruke senere
         if (loading) return <p>Loading...</p>;
@@ -48,9 +49,9 @@ function App() {
                 <h3>test</h3>
             </div>
         ));
-    }
+    }; */
 
     return <Homepage />;
-}
+};
 
 export default App;
