@@ -18,7 +18,7 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-const GET_POKEMON_LIST = gql`
+/* const GET_POKEMON_LIST = gql`
     {
         pokemon_v2_pokemonsprites(limit: 10) {
             pokemon_id
@@ -30,7 +30,7 @@ const GET_POKEMON_LIST = gql`
     }
 `;
 
-client.query({ query: GET_POKEMON_LIST }).then(console.log);
+client.query({ query: GET_POKEMON_LIST }).then(console.log); */
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
