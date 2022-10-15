@@ -7,6 +7,7 @@ import Card from "../../components/Card/Card";
 import leftEdge from "../../assets/pageEdges/leftEdge.svg";
 import rightEdge from "../../assets/pageEdges/rightEdge.svg";
 import footerEdge from "../../assets/pageEdges/footerEdge.svg";
+import up from "../../assets/icons/up.svg";
 
 import styled from "styled-components";
 import { useScroll } from "../../hooks/useScroll";
@@ -48,10 +49,10 @@ const MainPage = () => {
     }, []);
 
     // If the user has scrolled over 80 px, increase the line heights
-    if (scroll > 5) {
+    if (scroll > 70) {
         lineHeight = "80vh";
         lineTop = "120px";
-        lineOffset = "7px";
+        lineOffset = "5px";
     }
 
     return (
@@ -71,6 +72,16 @@ const MainPage = () => {
                     );
                 })}
                 <FooterEdge src={footerEdge} />
+                <UpButton
+                    onClick={() =>
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        })
+                    }
+                >
+                    <img src={up} alt="up" />
+                </UpButton>
             </CardGrid>
         </>
     );
@@ -100,6 +111,19 @@ const CardGrid = styled.div`
     margin-top: 30px;
     grid-row-gap: 50px;
     justify-items: center;
+`;
+
+const UpButton = styled.div`
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: #bd1908;
+    border-radius: 50%;
 `;
 
 const LeftEdge = styled.img<LeftEdgeI>`

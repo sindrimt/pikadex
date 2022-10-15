@@ -72,7 +72,7 @@ const Navbar = () => {
 
     let small = false;
 
-    if (yOffset > 5) {
+    if (yOffset > 70) {
         small = true;
     }
 
