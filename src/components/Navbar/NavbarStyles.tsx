@@ -227,6 +227,9 @@ export const PokeBallBtn = styled.img`
     @media (max-width: 600px) {
         width: 40px;
     }
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 //Wrapper for the type-tags
@@ -259,6 +262,9 @@ export const Tag = styled.div`
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 //The bottom edge of the navbar
 export const FilterOuter = styled.div`
