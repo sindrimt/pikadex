@@ -112,7 +112,6 @@ export const PokeBall = styled.img`
 
 //The grid creates equally sized rows. Used by the search bar, pokeball and the type-tags.
 export const GridContainer = styled.div`
-    overflow-y: scroll;
     display: grid;
     margin-top: 20px;
     padding: 0 20px 0 20px;
@@ -307,7 +306,6 @@ export const DropdownOuter = styled.div`
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: grid;
     grid-row-gap: 50px;
-    overflow-y: scroll;
 
     @media (max-width: 600px) {
         grid-template-rows: 3fr 3fr 1fr;
