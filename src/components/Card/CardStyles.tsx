@@ -7,6 +7,7 @@ interface TagIconI {
 export const CardContainer = styled.div`
     width: 80%;
     height: 190px;
+    background-color: rgba(116, 203, 72, 0.2);
     border-radius: 8px 8px 0 0;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr 1fr;
