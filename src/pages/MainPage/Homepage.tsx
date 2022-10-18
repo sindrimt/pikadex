@@ -179,7 +179,7 @@ const FooterEdge = styled.img`
     position: absolute;
     bottom: -1px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 100%);
 `;
 
 export default MainPage;
