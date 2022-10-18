@@ -8,7 +8,7 @@ import navbarEdgeLarge from "../../assets/pageEdges/navbarEdgeLarge.svg";
 import pokeball from "../../assets/Pokeball.svg";
 import { useScroll } from "../../hooks/useScroll";
 import ReactDOM from "react-dom";
-
+import { HiMagnifyingGlass } from "react-icons/hi2";
 import {
     ButtonsContainer,
     DownArrow,
@@ -134,10 +134,12 @@ const Navbar = () => {
                     <GridContainer>
                         {/* Grid row 1 */}
                         <SearchOuter>
-                            <div className="I am a invisible div hahah :)" />
+                            <div className="filler"></div>
                             {/* Grid column 1 */}
-                            <input type="text" placeholder="Search by name or index" className="searchbar" />
-                            {/* <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} /> */}
+                            <div className="searchContainer">
+                                <input type="text" placeholder="Search by name or index" className="searchbar" />
+                                <HiMagnifyingGlass size={25} className="searchIcon" />
+                            </div>
                             {/* Grid column 2 */}
                             <PokeBallBtnContainer>
                                 <PokeBallBtn src={pokeballIcon} />

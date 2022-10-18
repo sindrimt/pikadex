@@ -37,7 +37,7 @@ const MainPage = () => {
 
     let lineHeight: string = "70vh";
     let lineTop: string = "200px";
-    let lineOffset: string = "0px";
+    let lineOffset: string = "1px";
 
     const [pokemonData, setPokemonData] = useState<any>([]);
 
@@ -102,12 +102,12 @@ interface RightEdgeI {
 //Grid for the pokemon cards
 const CardGrid = styled.div`
     position: absolute;
+    margin-left: 5%;
     z-index: -1;
-    top: 172px;
-    width: 100%;
+    top: 208px;
+    width: 90%;
     height: fit-content;
     display: grid;
-    margin-top: 30px;
     grid-row-gap: 50px;
     justify-items: center;
     padding-bottom: 50px;
@@ -126,6 +126,11 @@ const CardGrid = styled.div`
     }
     @media screen and (min-width: 1600px) {
         grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (max-width: 1000px) {
+        width: 95%;
+        margin-left: 2.5%;
     }
 `;
 
