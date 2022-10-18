@@ -92,13 +92,31 @@ export const SearchOuter = styled.div`
         grid-template-columns: 4fr 1fr;
         grid-column-gap: 5px;
 
-        .searchbar {
-            border-radius: 6px;
-            outline: none;
+        .searchContainer {
+            display: inline-flex;
+            flex: 1;
             border: 1px solid grey;
             background-color: #f8f8f8;
+            border-radius: 6px;
+            overflow: hidden;
+          }
+
+        .searchbar {
+            outline: none;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            flex: 1;
+            border: none;
             padding-left: 10px;
             font-size: 15px;
+        }
+
+        .searchIcon {
+            padding: 0.7rem;
+            /* display: flex; */
+            /* align-items: center; */
+            /* background-color: black;
+            -webkit-mask-image: url(icon.svg);
+            mask-image: url(icon.svg); */
         }
     }
 `;
