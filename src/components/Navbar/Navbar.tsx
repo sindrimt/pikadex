@@ -6,6 +6,9 @@ import logo from "../../assets/Logo.svg";
 import navbarEdge from "../../assets/pageEdges/navbarEdge.svg";
 import pokeball from "../../assets/Pokeball.svg";
 import { useScroll } from "../../hooks/useScroll";
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import {
     ButtonsContainer,
     DownArrow,
