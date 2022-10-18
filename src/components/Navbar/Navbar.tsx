@@ -104,8 +104,10 @@ const Navbar = () => {
                         {/* Grid row 1 */}
                         <SearchOuter>
                             {/* Grid column 1 */}
+                            <div className="searchContainer">
                             <input type="text" placeholder="Search by name or index" className="searchbar" />
                             <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} />
+                            </div>
                             {/* Grid column 2 */}
                             <PokeBallBtnContainer>
                                 <PokeBallBtn src={pokeballIcon} />
