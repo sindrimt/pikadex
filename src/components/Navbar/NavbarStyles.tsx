@@ -250,25 +250,11 @@ export const PokeBallBtn = styled.img`
 `;
 
 //Wrapper for the type-tags. Used for the carousel.
-export const TagOuter = styled.div`
-    display: flex;
-    height: 30px;
-    gap: 20px;
-    overflow-y: scroll;
+export const SelectedTags = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 20%;
     margin: auto;
-    width: 40%;
-
-    @media (max-width: 600px) {
-        width: 90%;
-    }
-
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll;
-
-    ::-webkit-scrollbar {
-        display: none; /* for Chrome, Safari, and Opera */
-    }
 `;
 
 //Wrapper for the type-tags. Used for the carousel.

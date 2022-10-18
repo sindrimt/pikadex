@@ -32,7 +32,7 @@ import {
     SortByBox,
     SortTag,
     Tag,
-    TagOuter,
+    SelectedTags,
     TypesBox,
     OverflowWrapper,
     TagGrid,
@@ -142,13 +142,12 @@ const Navbar = () => {
                                     <PokeBallBtn src={pokeballIcon} />
                                 </PokeBallBtnContainer>
                             </SearchOuter>
-                            {/* Grid row 2 */}
-                            <TagOuter>
-                                {/* Map over the list of tags with colors and text */}
-                                {list.map((item: Array<string>) => (
-                                    <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
-                                ))}
-                            </TagOuter>
+                            {/* Grid row 2: selected type tags are displayed */}
+                            <SelectedTags>
+                                {/*Click on a tag in the filter and display them here*/}
+                                <Tag>Water</Tag>
+                                <Tag>Water</Tag>
+                            </SelectedTags>
                         </GridContainer>
                     )}
 
