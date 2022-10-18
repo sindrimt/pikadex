@@ -383,6 +383,7 @@ export const PokemonContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 50px;
     right: 0px;
+    overflow: hidden;
     top: 122px;
     column-gap: 0px;
     align-items: baseline;
