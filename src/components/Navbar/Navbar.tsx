@@ -4,6 +4,7 @@ import navArrowDown from "../../assets/icons/navbarArrowDown.svg";
 import pokeballIcon from "../../assets/icons/pokeball_icon.svg";
 import logo from "../../assets/Logo.svg";
 import navbarEdge from "../../assets/pageEdges/navbarEdge.svg";
+import navbarEdgeLarge from "../../assets/pageEdges/navbarEdgeLarge.svg";
 import pokeball from "../../assets/Pokeball.svg";
 import { useScroll } from "../../hooks/useScroll";
 import ReactDOM from 'react-dom'
@@ -24,6 +25,7 @@ import {
     PokeBall,
     PokeBallBtn,
     PokeBallBtnContainer,
+    PokemonContainer,
     ResetBtn,
     SearchBtn,
     SearchOuter,
@@ -33,6 +35,12 @@ import {
     TagOuter,
     TypesBox,
 } from "./NavbarStyles";
+
+import pikachu from "../../assets/Navbar/pokemon/pikachu.svg";
+import charizard from "../../assets/Navbar/pokemon/charizard.svg";
+import squirtle from "../../assets/Navbar/pokemon/squirtle.svg";
+import charmander from "../../assets/Navbar/pokemon/charmander.svg";
+import bulbasaur from "../../assets/Navbar/pokemon/bulbasaur.svg";
 
 //Retrieved from https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
 const list = [
@@ -70,11 +78,13 @@ const Navbar = () => {
         showDropdown ? setHeight("fit-content") : setHeight("172px");
     };
 
+    const yOffsetThreshold = 70;
+
     const yOffset = useScroll();
 
     let small = false;
 
-    if (yOffset > 70) {
+    if (yOffset > yOffsetThreshold) {
         small = true;
     }
 
@@ -95,6 +105,16 @@ const Navbar = () => {
                     </LogoTextbox>
                     <DownArrow src={navArrowDown} />
                 </LogoContainer>
+                <img src={pikachu} alt="pikachu" className="pikachu" style={{ display: yOffset <= yOffsetThreshold ? "block" : "none" }} />
+                <PokemonContainer style={{ display: yOffset <= yOffsetThreshold ? "block" : "none" }}>
+                    {/* <img src={bulbasaur} alt="bulbasaur" className="bulbasaur" />
+                    <img src={charmander} alt="chcharmander" className="charmander" />
+                    <img src={squirtle} alt="squirtle" className="squirtle" /> */}
+                    <img src={charizard} alt="charizard" className="charizard" />
+                    <img src={charizard} alt="charizard" className="charizard" />
+                    <img src={charizard} alt="charizard" className="charizard" />
+                    <img src={charizard} alt="charizard" className="charizard" />
+                </PokemonContainer>
                 <PokeBall src={pokeball} />
                 {small ? (
                     ""
@@ -158,6 +178,7 @@ const Navbar = () => {
                 )}
                 <FilterOuter>
                     <NavbarEdge src={navbarEdge} onClick={() => setShowDropdown(!showDropdown)} />
+                    {/*    <NavbarEdge src={navbarEdgeLarge} onClick={() => setShowDropdown(!showDropdown)} style={{ width: "400px" }} /> */}
                 </FilterOuter>
             </NavbarOuter>
         </>

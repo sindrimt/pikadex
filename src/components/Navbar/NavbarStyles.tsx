@@ -9,6 +9,21 @@ interface Epic {
 
 //The wrapper for our Navbar
 export const NavbarOuter = styled.div<Epic>`
+    // Sets only animation when scrolling down
+    transition: ${(props) => (props.transition ? "0.3s all" : "0s")};
+    height: ${(props) => props.height};
+    position: fixed;
+    width: 100%;
+    background-color: #bd1808;
+
+    .pikachu {
+        position: fixed;
+
+        @media (max-width: 600px) {
+            visibility: hidden;
+        }
+    }
+
     @media (max-width: 600px) {
         // Sets only animation when scrolling down
         transition: ${(props) => (props.transition ? "0.3s all" : "0s")};
@@ -21,6 +36,16 @@ export const NavbarOuter = styled.div<Epic>`
 
 //Wrapper for the logo and the textbox
 export const LogoContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    margin: 15px 0 0 2%;
+    height: 32px;
+    background-color: rgba(234, 234, 234, 0.2);
+    border-radius: 4px;
+    color: white;
+    font-size: 24px;
     @media (max-width: 600px) {
         display: flex;
         justify-content: space-between;
@@ -38,6 +63,9 @@ export const LogoContainer = styled.div`
 export const LogoTextbox = styled.div`
     transition: 0.5s all;
 
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
     @media (max-width: 600px) {
         display: flex;
         justify-content: space-between;
@@ -46,6 +74,8 @@ export const LogoTextbox = styled.div`
 `;
 
 export const Logo = styled.img`
+    width: 25px;
+    margin-left: 8px;
     @media (max-width: 600px) {
         width: 25px;
         margin-left: 8px;
@@ -54,6 +84,10 @@ export const Logo = styled.img`
 
 export const DownArrow = styled.img`
     transition: 0.5s all;
+    width: 25px;
+    position: relative;
+    bottom: 4px;
+    right: 5px;
 
     @media (max-width: 600px) {
         width: 25px;
@@ -64,6 +98,10 @@ export const DownArrow = styled.img`
 `;
 
 export const PokeBall = styled.img`
+    width: 120px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     @media (max-width: 600px) {
         width: 120px;
         position: absolute;
@@ -74,6 +112,11 @@ export const PokeBall = styled.img`
 
 //The grid creates equally sized rows. Used by the search bar, pokeball and the type-tags.
 export const GridContainer = styled.div`
+    display: grid;
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
+    grid-template-rows: repeat(1fr);
+    row-gap: 20px;
     @media (max-width: 600px) {
         display: grid;
         margin-top: 20px;
@@ -85,9 +128,28 @@ export const GridContainer = styled.div`
 
 //Wrapper for the searchbar and pokeball button
 export const SearchOuter = styled.div`
+    display: grid;
+    width: 80%;
+    height: 40px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-column-gap: 0px;
+    margin: auto;
+
+    .searchbar {
+        border-radius: 6px;
+        outline: none;
+        border: 1px solid grey;
+        background-color: #f8f8f8;
+        padding-left: 10px;
+        font-size: 15px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+    }
+
     @media (max-width: 600px) {
         display: grid;
-        width: 100%;
+        width: 90%;
         height: 40px;
         grid-template-columns: 1fr 4fr 1fr;
         grid-column-gap: 5px;
@@ -99,7 +161,7 @@ export const SearchOuter = styled.div`
             background-color: #f8f8f8;
             border-radius: 6px;
             overflow: hidden;
-          }
+        }
 
         .searchbar {
             outline: none;
@@ -108,6 +170,7 @@ export const SearchOuter = styled.div`
             border: none;
             padding-left: 10px;
             font-size: 15px;
+            width: 100%;
         }
 
         .searchIcon {
@@ -123,6 +186,10 @@ export const SearchOuter = styled.div`
 `;
 
 export const PokeBallBtnContainer = styled.div`
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     @media (max-width: 600px) {
         position: relative;
         width: 100%;
@@ -132,6 +199,7 @@ export const PokeBallBtnContainer = styled.div`
 `;
 
 export const PokeBallBtn = styled.img`
+    width: 40px;
     @media (max-width: 600px) {
         width: 40px;
     }
@@ -143,6 +211,8 @@ export const TagOuter = styled.div`
     height: 30px;
     gap: 20px;
     overflow-y: scroll;
+    margin: auto;
+    width: 40%;
 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
@@ -172,9 +242,14 @@ export const FilterOuter = styled.div`
 export const NavbarEdge = styled.img`
     margin-top: 10px;
     z-index: 999;
+    width: 270px;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+        width: 300px;
     }
 `;
 
@@ -255,6 +330,8 @@ export const SortTag = styled.div`
         width: 90%;
     }
 
+    font-size: 0.9rem;
+    padding: 0 5px 0 5px;
     @media screen and (max-width: 320px) {
         font-size: 0.9rem;
         padding: 0 5px 0 5px;
@@ -278,6 +355,7 @@ export const ResetBtn = styled.div`
     display: grid;
     align-items: center;
 
+    font-size: 1rem;
     @media screen and (max-width: 320px) {
         font-size: 1rem;
     }
@@ -293,7 +371,31 @@ export const SearchBtn = styled.div`
     display: grid;
     align-items: center;
 
+    font-size: 1rem;
     @media screen and (max-width: 320px) {
         font-size: 1rem;
+    }
+`;
+
+export const PokemonContainer = styled.div`
+    width: 25%;
+    display: grid;
+    position: fixed;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 50px;
+    right: 0px;
+    overflow: hidden;
+    top: 122px;
+    column-gap: 0px;
+    align-items: baseline;
+
+    img {
+        position: relative;
+        bottom: 0px;
+        width: 55px;
+    }
+
+    @media (max-width: 600px) {
+        visibility: hidden;
     }
 `;
