@@ -112,6 +112,7 @@ export const PokeBall = styled.img`
 
 //The grid creates equally sized rows. Used by the search bar, pokeball and the type-tags.
 export const GridContainer = styled.div`
+    overflow-y: scroll;
     display: grid;
     margin-top: 20px;
     padding: 0 20px 0 20px;
@@ -267,10 +268,15 @@ export const FilterOuter = styled.div`
     width: 100%;
 `;
 
-export const NavbarEdge = styled.img`
+interface NavbarEdge {
+    transformY: string;
+}
+
+export const NavbarEdge = styled.img<NavbarEdge>`
     margin-top: 10px;
     z-index: 999;
     width: 270px;
+    transform: translateY(${(props) => props.transformY});
 
     &:hover {
         cursor: pointer;
@@ -290,7 +296,6 @@ export const FilterText = styled.div``;
 //The dropdown appears when "Filter your pokemon" is clicked. The grid creates equally sized rows.
 export const DropdownOuter = styled.div`
     transition: 0.5s all;
-
     position: relative;
     background-color: #bd1808;
     width: 100%;
@@ -301,13 +306,33 @@ export const DropdownOuter = styled.div`
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: grid;
-    grid-template-rows: 3fr 3fr 1fr;
     grid-row-gap: 50px;
+    overflow-y: scroll;
+
+    @media (max-width: 600px) {
+        grid-template-rows: 3fr 3fr 1fr;
+    }
+
+    @media (min-width: 600px) {
+        grid-template-columns: 2fr 1fr;
+        height: 300px;
+    }
 `;
 
 //Wrapper for each row-section in the dropdown grid
 export const DropdownGridRow = styled.div`
     width: 100%;
+
+    //The buttons at the bottom of the navbar takes up two colunmns
+    @media (min-width: 600px) {
+        &:nth-child(3) {
+            grid-column: span 2;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            margin: auto;
+        }
+    }
 `;
 
 //Header for "Types" and "Sort by"
@@ -325,6 +350,7 @@ export const TypesBox = styled.div`
     border-radius: 10px;
     width: 95%;
     margin: auto;
+    z-index: 999999;
 `;
 
 //Box and grid for the sort-by-section
@@ -337,6 +363,7 @@ export const SortByBox = styled.div`
     width: 95%;
     align-items: center;
     margin: auto;
+    z-index: 99999999999;
 `;
 
 //"Sort by"-tags such as "A - Z"

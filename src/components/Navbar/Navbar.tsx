@@ -89,10 +89,17 @@ const Navbar = () => {
     }
 
     const checkHeight: () => string = () => {
-        if (small) return "63px";
+        if (showDropdown) return "fit-content";
+        else if (small) return "63px";
         else {
             return height;
         }
+    };
+
+    const checkTransform: any = () => {
+        if (small && showDropdown) return "20px";
+        else if (!small && showDropdown) return "20px";
+        else if (small && !showDropdown) return "0px";
     };
 
     return (
@@ -105,8 +112,13 @@ const Navbar = () => {
                     </LogoTextbox>
                     <DownArrow src={navArrowDown} />
                 </LogoContainer>
-                <img src={pikachu} alt="pikachu" className="pikachu" style={{ display: yOffset <= yOffsetThreshold ? "block" : "none" }} />
-                <PokemonContainer style={{ display: yOffset <= yOffsetThreshold ? "block" : "none" }}>
+                <img
+                    src={pikachu}
+                    alt="pikachu"
+                    className="pikachu"
+                    style={{ display: !small || showDropdown ? "block" : "none" }}
+                />
+                <PokemonContainer style={{ display: !small || showDropdown ? "block" : "none" }}>
                     {/* <img src={bulbasaur} alt="bulbasaur" className="bulbasaur" />
                     <img src={charmander} alt="chcharmander" className="charmander" />
                     <img src={squirtle} alt="squirtle" className="squirtle" /> */}
@@ -116,7 +128,7 @@ const Navbar = () => {
                     <img src={charizard} alt="charizard" className="charizard" />
                 </PokemonContainer>
                 <PokeBall src={pokeball} />
-                {small ? (
+                {small && !showDropdown ? (
                     ""
                 ) : (
                     <GridContainer>
@@ -177,7 +189,12 @@ const Navbar = () => {
                     </>
                 )}
                 <FilterOuter>
-                    <NavbarEdge src={navbarEdge} onClick={() => setShowDropdown(!showDropdown)} />
+                    <NavbarEdge
+                        // style={{ marginTop: small || showDropdown ? "50px" : "10px" }}
+                        src={navbarEdge}
+                        onClick={() => setShowDropdown(!showDropdown)}
+                        transformY={checkTransform()}
+                    />
                     {/*    <NavbarEdge src={navbarEdgeLarge} onClick={() => setShowDropdown(!showDropdown)} style={{ width: "400px" }} /> */}
                 </FilterOuter>
             </NavbarOuter>
