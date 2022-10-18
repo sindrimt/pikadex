@@ -17,7 +17,7 @@ export const NavbarOuter = styled.div<Epic>`
     background-color: #bd1808;
 
     .pikachu {
-        position: fixed;
+        position: absolute;
 
         @media (max-width: 600px) {
             visibility: hidden;
@@ -31,6 +31,22 @@ export const NavbarOuter = styled.div<Epic>`
         position: fixed;
         width: 100%;
         background-color: #bd1808;
+    }
+`;
+
+//Wraps the content inside the navbar. Scroll on vertical overflow. Dynamic heighs.
+export const OverflowWrapper = styled.div`
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    max-height: 85vh;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+
+    ::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
     }
 `;
 
@@ -110,7 +126,8 @@ export const PokeBall = styled.img`
     }
 `;
 
-//The grid creates equally sized rows. Used by the search bar, pokeball and the type-tags.
+//The grid creates equally sized rows. Used by the search bar, pokeball, types-box, sort-by-box, and the
+//buttons at the bottom of the navbar.
 export const GridContainer = styled.div`
     display: grid;
     margin-top: 20px;
@@ -273,25 +290,6 @@ export const FilterOuter = styled.div`
     width: 100%;
 `;
 
-interface NavbarEdge {
-    transformY: string;
-}
-
-export const NavbarEdge = styled.img<NavbarEdge>`
-    margin-top: 10px;
-    z-index: 999;
-    width: 270px;
-    transform: translateY(${(props) => props.transformY});
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    @media (min-width: 600px) {
-        width: 300px;
-    }
-`;
-
 //Filter icon to the left of the text
 export const FilterIcon = styled.div``;
 
@@ -439,7 +437,7 @@ export const SearchBtn = styled.div`
 export const PokemonContainer = styled.div`
     width: 25%;
     display: grid;
-    position: fixed;
+    position: absolute;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 50px;
     right: 0px;
@@ -456,5 +454,20 @@ export const PokemonContainer = styled.div`
 
     @media (max-width: 600px) {
         visibility: hidden;
+    }
+`;
+
+export const NavbarEdge = styled.img`
+    position: absolute;
+    bottom: -22px;
+    z-index: 999;
+    width: 270px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+        width: 300px;
     }
 `;
