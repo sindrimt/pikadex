@@ -7,6 +7,8 @@ import navbarEdge from "../../assets/pageEdges/navbarEdge.svg";
 import navbarEdgeLarge from "../../assets/pageEdges/navbarEdgeLarge.svg";
 import pokeball from "../../assets/Pokeball.svg";
 import { useScroll } from "../../hooks/useScroll";
+import ReactDOM from "react-dom";
+
 import {
     ButtonsContainer,
     DownArrow,
@@ -120,10 +122,10 @@ const Navbar = () => {
                     <GridContainer>
                         {/* Grid row 1 */}
                         <SearchOuter>
-                            <div className="I am a invisible div hahah :)"></div>
+                            <div className="I am a invisible div hahah :)" />
                             {/* Grid column 1 */}
-
                             <input type="text" placeholder="Search by name or index" className="searchbar" />
+                            {/* <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} /> */}
                             {/* Grid column 2 */}
                             <PokeBallBtnContainer>
                                 <PokeBallBtn src={pokeballIcon} />
