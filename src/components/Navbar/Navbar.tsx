@@ -105,6 +105,7 @@ const Navbar = () => {
                         <SearchOuter>
                             {/* Grid column 1 */}
                             <input type="text" placeholder="Search by name or index" className="searchbar" />
+                            <FontAwesomeIcon className="searchIcon" icon={faMagnifyingGlass} />
                             {/* Grid column 2 */}
                             <PokeBallBtnContainer>
                                 <PokeBallBtn src={pokeballIcon} />
