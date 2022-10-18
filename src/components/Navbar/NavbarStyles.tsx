@@ -149,10 +149,10 @@ export const SearchOuter = styled.div`
 
     @media (max-width: 600px) {
         display: grid;
-        width: 100%;
+        width: 90%;
         height: 40px;
-        grid-template-columns: 4fr 1fr;
-        grid-column-gap: 5px;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-column-gap: 25px;
 
         .searchContainer {
             display: inline-flex;
@@ -161,7 +161,7 @@ export const SearchOuter = styled.div`
             background-color: #f8f8f8;
             border-radius: 6px;
             overflow: hidden;
-          }
+        }
 
         .searchbar {
             outline: none;
@@ -170,6 +170,7 @@ export const SearchOuter = styled.div`
             border: none;
             padding-left: 10px;
             font-size: 15px;
+            width: 100%;
         }
 
         .searchIcon {
