@@ -272,13 +272,31 @@ export const DropdownOuter = styled.div`
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: grid;
-    grid-template-rows: 3fr 3fr 1fr;
     grid-row-gap: 50px;
+
+    @media (max-width: 600px) {
+        grid-template-rows: 3fr 3fr 1fr;
+    }
+
+    @media (min-width: 600px) {
+        grid-template-columns: 2fr 1fr;
+    }
 `;
 
 //Wrapper for each row-section in the dropdown grid
 export const DropdownGridRow = styled.div`
     width: 100%;
+
+    //The buttons at the bottom of the navbar takes up two colunmns
+    @media (min-width: 600px) {
+        &:nth-child(3) {
+            grid-column: span 2;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            margin: auto;
+        }
+    }
 `;
 
 //Header for "Types" and "Sort by"
