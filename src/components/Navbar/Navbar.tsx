@@ -34,6 +34,7 @@ import {
     Tag,
     TagOuter,
     TypesBox,
+    OverflowWrapper,
 } from "./NavbarStyles";
 
 import pikachu from "../../assets/Navbar/pokemon/pikachu.svg";
@@ -67,7 +68,6 @@ const list = [
 const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState<boolean>(false);
     const [height, setHeight] = useState<string>("172px");
-    const [showSmallNavbar, setShowSmallNavbar] = useState<boolean>(false);
 
     useEffect(() => {
         console.log(showDropdown);
@@ -96,104 +96,99 @@ const Navbar = () => {
         }
     };
 
-    const checkTransform: any = () => {
-        if (small && showDropdown) return "20px";
-        else if (!small && showDropdown) return "20px";
-        else if (small && !showDropdown) return "0px";
-    };
-
     return (
         <>
             <NavbarOuter transition={small ? true : false} height={checkHeight()}>
-                <LogoContainer>
-                    <LogoTextbox>
-                        <Logo src={logo} />
-                        <div>Pikadex</div>
-                    </LogoTextbox>
-                    <DownArrow src={navArrowDown} />
-                </LogoContainer>
-                <img
-                    src={pikachu}
-                    alt="pikachu"
-                    className="pikachu"
-                    style={{ display: !small || showDropdown ? "block" : "none" }}
-                />
-                <PokemonContainer style={{ display: !small || showDropdown ? "block" : "none" }}>
-                    {/* <img src={bulbasaur} alt="bulbasaur" className="bulbasaur" />
+                <OverflowWrapper>
+                    <LogoContainer>
+                        <LogoTextbox>
+                            <Logo src={logo} />
+                            <div>Pikadex</div>
+                        </LogoTextbox>
+                        <DownArrow src={navArrowDown} />
+                    </LogoContainer>
+                    <img
+                        src={pikachu}
+                        alt="pikachu"
+                        className="pikachu"
+                        style={{ display: !small || showDropdown ? "block" : "none" }}
+                    />
+                    <PokemonContainer style={{ display: !small || showDropdown ? "block" : "none" }}>
+                        {/* <img src={bulbasaur} alt="bulbasaur" className="bulbasaur" />
                     <img src={charmander} alt="chcharmander" className="charmander" />
                     <img src={squirtle} alt="squirtle" className="squirtle" /> */}
-                    <img src={charizard} alt="charizard" className="charizard" />
-                    <img src={charizard} alt="charizard" className="charizard" />
-                    <img src={charizard} alt="charizard" className="charizard" />
-                    <img src={charizard} alt="charizard" className="charizard" />
-                </PokemonContainer>
-                <PokeBall src={pokeball} />
-                {small && !showDropdown ? (
-                    ""
-                ) : (
-                    <GridContainer>
-                        {/* Grid row 1 */}
-                        <SearchOuter>
-                            <div className="filler"></div>
-                            {/* Grid column 1 */}
-                            <div className="searchContainer">
-                                <input type="text" placeholder="Search by name or index" className="searchbar" />
-                                <HiMagnifyingGlass size={25} className="searchIcon" />
-                            </div>
-                            {/* Grid column 2 */}
-                            <PokeBallBtnContainer>
-                                <PokeBallBtn src={pokeballIcon} />
-                            </PokeBallBtnContainer>
-                        </SearchOuter>
-                        {/* Grid row 2 */}
-                        <TagOuter>
-                            {/* Map over the list of tags with colors and text */}
-                            {list.map((item: Array<string>) => (
-                                <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
-                            ))}
-                        </TagOuter>
-                    </GridContainer>
-                )}
+                        <img src={charizard} alt="charizard" className="charizard" />
+                        <img src={charizard} alt="charizard" className="charizard" />
+                        <img src={charizard} alt="charizard" className="charizard" />
+                        <img src={charizard} alt="charizard" className="charizard" />
+                    </PokemonContainer>
+                    <PokeBall src={pokeball} />
+                    {small && !showDropdown ? (
+                        ""
+                    ) : (
+                        <GridContainer>
+                            {/* Grid row 1 */}
+                            <SearchOuter>
+                                <div className="filler"></div>
+                                {/* Grid column 1 */}
+                                <div className="searchContainer">
+                                    <input type="text" placeholder="Search by name or index" className="searchbar" />
+                                    <HiMagnifyingGlass size={25} className="searchIcon" />
+                                </div>
+                                {/* Grid column 2 */}
+                                <PokeBallBtnContainer>
+                                    <PokeBallBtn src={pokeballIcon} />
+                                </PokeBallBtnContainer>
+                            </SearchOuter>
+                            {/* Grid row 2 */}
+                            <TagOuter>
+                                {/* Map over the list of tags with colors and text */}
+                                {list.map((item: Array<string>) => (
+                                    <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
+                                ))}
+                            </TagOuter>
+                        </GridContainer>
+                    )}
 
-                {showDropdown && (
-                    <>
-                        <DropdownOuter>
-                            <DropdownGridRow>
-                                <DropdownHeader>Types</DropdownHeader>
-                                <TypesBox>
-                                    <TagOuter>
-                                        {/* Map over the list of tags with colors and text */}
-                                        {list.map((item: Array<string>) => (
-                                            <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
-                                        ))}
-                                    </TagOuter>
-                                </TypesBox>
-                            </DropdownGridRow>
-                            <DropdownGridRow>
-                                <DropdownHeader>Sort By</DropdownHeader>
-                                <SortByBox>
-                                    <SortTag>A - Z</SortTag>
-                                    <SortTag>Z - A</SortTag>
-                                    <SortTag>Lowest No.</SortTag>
-                                    <SortTag>Highest No.</SortTag>
-                                    <SortTag style={{}}>Favorites</SortTag>
-                                </SortByBox>
-                            </DropdownGridRow>
-                            <DropdownGridRow>
-                                <ButtonsContainer>
-                                    <ResetBtn>Reset</ResetBtn>
-                                    <SearchBtn>Search</SearchBtn>
-                                </ButtonsContainer>
-                            </DropdownGridRow>
-                        </DropdownOuter>
-                    </>
-                )}
+                    {showDropdown && (
+                        <>
+                            <DropdownOuter>
+                                <DropdownGridRow>
+                                    <DropdownHeader>Types</DropdownHeader>
+                                    <TypesBox>
+                                        <TagOuter>
+                                            {/* Map over the list of tags with colors and text */}
+                                            {list.map((item: Array<string>) => (
+                                                <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
+                                            ))}
+                                        </TagOuter>
+                                    </TypesBox>
+                                </DropdownGridRow>
+                                <DropdownGridRow>
+                                    <DropdownHeader>Sort By</DropdownHeader>
+                                    <SortByBox>
+                                        <SortTag>A - Z</SortTag>
+                                        <SortTag>Z - A</SortTag>
+                                        <SortTag>Lowest No.</SortTag>
+                                        <SortTag>Highest No.</SortTag>
+                                        <SortTag style={{}}>Favorites</SortTag>
+                                    </SortByBox>
+                                </DropdownGridRow>
+                                <DropdownGridRow>
+                                    <ButtonsContainer>
+                                        <ResetBtn>Reset</ResetBtn>
+                                        <SearchBtn>Search</SearchBtn>
+                                    </ButtonsContainer>
+                                </DropdownGridRow>
+                            </DropdownOuter>
+                        </>
+                    )}
+                </OverflowWrapper>
                 <FilterOuter>
                     <NavbarEdge
                         // style={{ marginTop: small || showDropdown ? "50px" : "10px" }}
                         src={navbarEdge}
                         onClick={() => setShowDropdown(!showDropdown)}
-                        transformY={checkTransform()}
                     />
                     {/*    <NavbarEdge src={navbarEdgeLarge} onClick={() => setShowDropdown(!showDropdown)} style={{ width: "400px" }} /> */}
                 </FilterOuter>
