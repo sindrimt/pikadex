@@ -11,6 +11,13 @@ export const CardContainer = styled.div`
     display: grid;
     grid-template-rows: 1fr 3fr 1fr 1fr;
     border: 1px solid #74cb48;
+
+    @media screen and (min-width: 900px) and (max-width: 1199px) {
+        &:nth-child(10) {
+            grid-column: span 3;
+            width: 26.5%;
+        }
+    }
 `;
 
 export const InformationContainer = styled.div`
