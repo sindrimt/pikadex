@@ -175,7 +175,7 @@ export const SearchOuter = styled.div`
 
         .searchIcon {
             padding: 0.45rem;
-            background-color: white;
+            background-color: #f8f8f8;
             /* display: flex; */
             /* align-items: center; */
             /* background-color: black;
