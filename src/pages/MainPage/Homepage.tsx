@@ -110,6 +110,7 @@ const CardGrid = styled.div`
     margin-top: 30px;
     grid-row-gap: 50px;
     justify-items: center;
+    padding-bottom: 50px;
 
     @media screen and (max-width: 500px) {
         grid-template-columns: repeat(1fr);
