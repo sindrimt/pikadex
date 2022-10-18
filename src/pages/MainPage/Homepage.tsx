@@ -153,6 +153,7 @@ const LeftEdge = styled.img<LeftEdgeI>`
     left: ${(props) => "-" + props.offset};
     top: ${(props) => props.top};
     height: ${(props) => props.height};
+    z-index: -1;
 
     @media (max-height: 680px) {
         height: 64vh;
@@ -178,6 +179,7 @@ const RightEdge = styled.img<RightEdgeI>`
     transform: translateX(0px);
     top: ${(props) => props.top};
     height: ${(props) => props.height};
+    z-index: -1;
 
     @media (max-height: 680px) {
         height: 64vh;
