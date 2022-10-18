@@ -89,7 +89,7 @@ export const SearchOuter = styled.div`
         display: grid;
         width: 100%;
         height: 40px;
-        grid-template-columns: 4fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
         grid-column-gap: 5px;
 
         .searchContainer {
@@ -111,7 +111,8 @@ export const SearchOuter = styled.div`
         }
 
         .searchIcon {
-            padding: 0.7rem;
+            padding: 0.45rem;
+            background-color: white;
             /* display: flex; */
             /* align-items: center; */
             /* background-color: black;

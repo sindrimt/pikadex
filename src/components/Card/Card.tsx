@@ -3,6 +3,12 @@ import bulb from "../../assets/testREMOVE/bulb.png";
 
 import { CardContainer, InformationContainer, NameTag, PokeIndex, Tag, Tags } from "./CardStyles";
 
+interface Pokemon {
+    index: number;
+    img: HTMLImageElement;
+    name: string;
+  }
+
 const Card = ({ index, img, name }: any) => {
     return (
         <>
