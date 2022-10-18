@@ -37,7 +37,7 @@ const MainPage = () => {
 
     let lineHeight: string = "70vh";
     let lineTop: string = "200px";
-    let lineOffset: string = "0px";
+    let lineOffset: string = "1px";
 
     const [pokemonData, setPokemonData] = useState<any>([]);
 

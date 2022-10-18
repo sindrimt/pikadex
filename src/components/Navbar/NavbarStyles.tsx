@@ -136,23 +136,47 @@ export const SearchOuter = styled.div`
     margin: auto;
 
     .searchbar {
-        border-radius: 6px;
         outline: none;
-        border: 1px solid grey;
-        background-color: #f8f8f8;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        flex: 1;
+        border: none;
         padding-left: 10px;
         font-size: 15px;
         width: 100%;
-        display: grid;
-        grid-template-columns: 4fr 1fr;
     }
 
+    .searchContainer {
+        display: inline-flex;
+        flex: 1;
+        border: 1px solid grey;
+        background-color: #f4f4f4;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .searchIcon {
+        padding: 0.45rem;
+        background-color: #f8f8f8;
+
+        &:hover {
+            cursor: pointer;
+        }
+        /* display: flex; */
+        /* align-items: center; */
+        /* background-color: black;
+            -webkit-mask-image: url(icon.svg);
+            mask-image: url(icon.svg); */
+    }
     @media (max-width: 600px) {
         display: grid;
         width: 90%;
         height: 40px;
-        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-columns: 4fr 1fr;
         grid-column-gap: 5px;
+
+        .filler {
+            display: none;
+        }
 
         .searchContainer {
             display: inline-flex;
@@ -213,6 +237,10 @@ export const TagOuter = styled.div`
     overflow-y: scroll;
     margin: auto;
     width: 40%;
+
+    @media (max-width: 600px) {
+        width: 90%;
+    }
 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
