@@ -32,9 +32,11 @@ import {
     SortByBox,
     SortTag,
     Tag,
-    TagOuter,
+    SelectedTags,
     TypesBox,
     OverflowWrapper,
+    TagGrid,
+    DropdownContainer,
 } from "./NavbarStyles";
 
 import pikachu from "../../assets/Navbar/pokemon/pikachu.svg";
@@ -140,47 +142,48 @@ const Navbar = () => {
                                     <PokeBallBtn src={pokeballIcon} />
                                 </PokeBallBtnContainer>
                             </SearchOuter>
-                            {/* Grid row 2 */}
-                            <TagOuter>
-                                {/* Map over the list of tags with colors and text */}
-                                {list.map((item: Array<string>) => (
-                                    <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
-                                ))}
-                            </TagOuter>
+                            {/* Grid row 2: selected type tags are displayed */}
+                            <SelectedTags>
+                                {/*Click on a tag in the filter and display them here*/}
+                                <Tag>Water</Tag>
+                                <Tag>Water</Tag>
+                            </SelectedTags>
                         </GridContainer>
                     )}
 
                     {showDropdown && (
                         <>
-                            <DropdownOuter>
-                                <DropdownGridRow>
-                                    <DropdownHeader>Types</DropdownHeader>
-                                    <TypesBox>
-                                        <TagOuter>
-                                            {/* Map over the list of tags with colors and text */}
-                                            {list.map((item: Array<string>) => (
-                                                <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
-                                            ))}
-                                        </TagOuter>
-                                    </TypesBox>
-                                </DropdownGridRow>
-                                <DropdownGridRow>
-                                    <DropdownHeader>Sort By</DropdownHeader>
-                                    <SortByBox>
-                                        <SortTag>A - Z</SortTag>
-                                        <SortTag>Z - A</SortTag>
-                                        <SortTag>Lowest No.</SortTag>
-                                        <SortTag>Highest No.</SortTag>
-                                        <SortTag style={{}}>Favorites</SortTag>
-                                    </SortByBox>
-                                </DropdownGridRow>
-                                <DropdownGridRow>
-                                    <ButtonsContainer>
-                                        <ResetBtn>Reset</ResetBtn>
-                                        <SearchBtn>Search</SearchBtn>
-                                    </ButtonsContainer>
-                                </DropdownGridRow>
-                            </DropdownOuter>
+                            <DropdownContainer>
+                                <DropdownOuter>
+                                    <DropdownGridRow>
+                                        <DropdownHeader>Types</DropdownHeader>
+                                        <TypesBox>
+                                            <TagGrid>
+                                                {/* Map over the list of tags with colors and text */}
+                                                {list.map((item: Array<string>) => (
+                                                    <Tag style={{ backgroundColor: `${item[1]}` }}>{item[0]}</Tag>
+                                                ))}
+                                            </TagGrid>
+                                        </TypesBox>
+                                    </DropdownGridRow>
+                                    <DropdownGridRow>
+                                        <DropdownHeader>Sort By</DropdownHeader>
+                                        <SortByBox>
+                                            <SortTag>A - Z</SortTag>
+                                            <SortTag>Z - A</SortTag>
+                                            <SortTag>Lowest No.</SortTag>
+                                            <SortTag>Highest No.</SortTag>
+                                            <SortTag style={{}}>Favorites</SortTag>
+                                        </SortByBox>
+                                    </DropdownGridRow>
+                                    <DropdownGridRow>
+                                        <ButtonsContainer>
+                                            <ResetBtn>Reset</ResetBtn>
+                                            <SearchBtn>Search</SearchBtn>
+                                        </ButtonsContainer>
+                                    </DropdownGridRow>
+                                </DropdownOuter>
+                            </DropdownContainer>
                         </>
                     )}
                 </OverflowWrapper>

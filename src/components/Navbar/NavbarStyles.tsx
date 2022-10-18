@@ -249,18 +249,25 @@ export const PokeBallBtn = styled.img`
     }
 `;
 
-//Wrapper for the type-tags
-export const TagOuter = styled.div`
-    display: flex;
-    height: 30px;
-    gap: 20px;
-    overflow-y: scroll;
+//Wrapper for the type-tags. Used for the carousel.
+export const SelectedTags = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 20%;
     margin: auto;
-    width: 40%;
+`;
 
-    @media (max-width: 600px) {
-        width: 90%;
-    }
+//Wrapper for the type-tags. Used for the carousel.
+export const TagGrid = styled.div`
+    display: grid;
+    height: 85%;
+    margin: auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+
+    //Carousel for the tags
+    overflow-y: scroll;
+    width: 90%;
 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
@@ -269,13 +276,24 @@ export const TagOuter = styled.div`
     ::-webkit-scrollbar {
         display: none; /* for Chrome, Safari, and Opera */
     }
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(6, auto);
+    }
+
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(6, auto);
+    }
+    @media (min-width: 1050px) {
+        resize: none;
+    }
 `;
 
 //Type tag such as Water, Bug, Fire, etc.
 export const Tag = styled.div`
     color: #ffffff;
     padding: 2px 10px 2px 10px;
-    display: flex;
+    display: flex; //Center text within tag
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
@@ -295,6 +313,26 @@ export const FilterIcon = styled.div``;
 
 //"Filter your pokemon"
 export const FilterText = styled.div``;
+
+//Adjust width based on screen size
+export const DropdownContainer = styled.div`
+    @media (min-width: 600px) {
+        width: 90%;
+        margin: auto;
+    }
+    @media (min-width: 1050px) {
+        width: 80%;
+        margin: auto;
+    }
+    @media (min-width: 1500px) {
+        width: 70%;
+        margin: auto;
+    }
+    @media (min-width: 1900px) {
+        width: 60%;
+        margin: auto;
+    }
+`;
 
 //The dropdown appears when "Filter your pokemon" is clicked. The grid creates equally sized rows.
 export const DropdownOuter = styled.div`
