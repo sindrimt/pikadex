@@ -37,6 +37,8 @@ import {
     OverflowWrapper,
     TagGrid,
     DropdownContainer,
+    PokeballBoxSupriseMe,
+    PokeballBoxSupriseMeText,
 } from "./NavbarStyles";
 
 import pikachu from "../../assets/Navbar/pokemon/pikachu.svg";
@@ -139,7 +141,10 @@ const Navbar = () => {
                                 </div>
                                 {/* Grid column 2 */}
                                 <PokeBallBtnContainer>
+                                    <PokeballBoxSupriseMe> 
+                                    <PokeballBoxSupriseMeText>Surprise me!</PokeballBoxSupriseMeText>
                                     <PokeBallBtn src={pokeballIcon} />
+                                    </PokeballBoxSupriseMe>
                                 </PokeBallBtnContainer>
                             </SearchOuter>
                             {/* Grid row 2: selected type tags are displayed */}
