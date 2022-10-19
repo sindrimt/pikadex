@@ -328,6 +328,9 @@ export const TagGrid = styled.div`
 export const Tag = styled.div`
     color: #ffffff;
     padding: 2px 10px 2px 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
     display: flex; //Center text within tag
     align-items: center;
     justify-content: space-evenly;
