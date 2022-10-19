@@ -146,11 +146,14 @@ export const GridContainer = styled.div`
 //Wrapper for the searchbar and pokeball button
 export const SearchOuter = styled.div`
     display: grid;
-    width: 80%;
+    width: 65%;
     height: 40px;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 2.5fr;
     grid-column-gap: 0px;
     margin: auto;
+    @media (max-width: 950px) {
+        grid-template-columns: 1fr 4fr 1fr;
+    }
 
     .searchbar {
         outline: none;
@@ -224,6 +227,15 @@ export const SearchOuter = styled.div`
             mask-image: url(icon.svg); */
         }
     }
+    @media (min-width: 900px) {
+        width: 55%;
+    }
+    @media (min-width: 1200px) {
+        width: 45%;
+    }
+    @media (min-width: 1600px) {
+        width: 55%;
+    }
 `;
 
 export const PokeBallBtnContainer = styled.div`
@@ -236,6 +248,29 @@ export const PokeBallBtnContainer = styled.div`
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+`;
+
+export const PokeballBoxSupriseMe = styled.div`
+    color: white;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+    @media (max-width: 950px) {
+        background-color: transparent;
+    }
+`;
+
+export const PokeballBoxSupriseMeText = styled.div`
+    @media (max-width: 950px) {
+        display: none;
     }
 `;
 
